@@ -1,0 +1,116 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>ANALYSIS</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<div [hidden]="!length">
+		<ion-grid class="gridView">
+			<ion-row>
+				<ion-col col-7>
+					<ion-segment [(ngModel)]="selectSegment">
+						<ion-segment-button class="segment-button" value="3M" (click)="segmentChanged('3M')">
+							3M
+						</ion-segment-button>
+						<ion-segment-button class="segment-button" value="6M" (click)="segmentChanged('6M')">
+							6M
+						</ion-segment-button>
+						<ion-segment-button class="segment-button" value="9M" (click)="segmentChanged('9M')">
+							9M
+						</ion-segment-button>
+						<ion-segment-button class="segment-button" value="12M" (click)="segmentChanged('12M')">
+							12M
+						</ion-segment-button>
+					</ion-segment>
+				</ion-col>
+				<ion-col col-5>
+					<ion-segment>
+						<ion-segment-button class="segment-button" value="Chart" (click)="selectType('Chart')">
+							Chart
+						</ion-segment-button>
+						<ion-segment-button class="segment-button" value="Trend" (click)="selectType('Trend')">
+							Trend
+						</ion-segment-button>
+					</ion-segment>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+
+		<div>
+			<ion-list *ngIf="selectTypeValue === 'Chart' && selectSegment === '3M'">
+				<ion-item>
+					<div class="chart">
+						<canvas #barCanvas id="bar" width="500" height="500" border='0'>
+						</canvas>
+						<div id="legend" class="legend" (click)="getEvent($event)">
+						</div>
+					</div>
+				</ion-item>
+			</ion-list>
+
+			<ion-list *ngIf="selectTypeValue === 'Chart' && selectSegment === '6M'">
+				<ion-item>
+					<div class="chart">
+						<canvas #barCanvas id="bar" width="500" height="500" border='0'>
+						</canvas>
+						<div id="legend" class="legend" (click)="getEvent($event)">
+						</div>
+					</div>
+				</ion-item>
+			</ion-list>
+
+			<ion-list *ngIf="selectTypeValue === 'Chart' && selectSegment === '9M'">
+				<ion-item>
+					<div class="chart">
+						<canvas #barCanvas id="bar" width="500" height="500" border='0'>
+						</canvas>
+						<div id="legend" class="legend" (click)="getEvent($event)">
+						</div>
+					</div>
+				</ion-item>
+			</ion-list>
+
+			<ion-list *ngIf="selectTypeValue === 'Chart' && selectSegment === '12M'">
+				<ion-item>
+					<div class="chart">
+						<canvas #barCanvas id="bar" width="500" height="500" border='0'>
+						</canvas>
+						<div id="legend" class="legend" (click)="getEvent($event)">
+						</div>
+					</div>
+				</ion-item>
+			</ion-list>
+		</div>
+
+
+		<!-- Trend Report -->
+		<div *ngIf="selectTypeValue === 'Trend'">
+			<table class="table">
+				<thead>
+					<tr class="header">
+						<th>Month</th>
+						<th>Total</th>
+						<th>< 5M </th>
+						<th>> 5M</th>
+						<th>< 30M </th>
+						<th>> 30M</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let value of trendReport">
+						<td>{{value.date}}</td>
+						<td>1</td>
+						<td>{{value.lessfive}}</td>
+						<td>{{value.morefive}}</td>
+						<td>{{value.lessthirty}}</td>
+						<td>{{value.morethirty}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</ion-content>

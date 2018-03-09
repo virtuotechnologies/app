@@ -1,0 +1,81 @@
+<!--
+  Generated template for the LaunguagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'LANGUAGE' | translate}}</ion-title>
+    <ion-buttons end>
+        <button ion-button class="end-btns" style="color:#9b9b9b">
+          Share
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card>
+    <ion-card-header class="selectLanguage">
+      {{ 'SELECT_LANGUAGE' | translate}}
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list radio-group>
+        <ion-item>
+          <ion-label class="labelValue">{{'ENGLISH'| translate}}</ion-label>
+          <ion-radio *ngIf="selectedValue === 'English'" value="English" [checked]="selectLaunguage" (ionSelect)="selectValue('English')">{{'ENGLISH' | translate}}</ion-radio>
+          <ion-radio *ngIf="selectedValue != 'English'" value="English" (ionSelect)="selectValue('English')">{{'ENGLISH' | translate}}</ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label class="labelValue">{{ 'FRENCH' | translate}}</ion-label>
+          <ion-radio *ngIf="selectedValue === 'French'" value="French" [checked]="selectLaunguage" (ionSelect)="selectValue('French')">{{ 'FRENCH' | translate}}</ion-radio>
+          <ion-radio *ngIf="selectedValue != 'French'" value="French" (ionSelect)="selectValue('French')">{{ 'FRENCH' | translate}}</ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label class="labelValue">{{ 'GERMAN' | translate}}</ion-label>
+          <ion-radio *ngIf="selectedValue === 'German'" value="German" [checked]="selectLaunguage" (ionSelect)="selectValue('German')">{{ 'GERMAN' | translate}}</ion-radio>
+          <ion-radio *ngIf="selectedValue != 'German'" value="German" (ionSelect)="selectValue('German')">{{ 'GERMAN' | translate}}</ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label class="labelValue">{{ 'SPANISH' | translate}}</ion-label>
+          <ion-radio *ngIf="selectedValue === 'Spanish'" value="Spanish" [checked]="selectLaunguage" (ionSelect)="selectValue('Spanish')">{{ 'SPANISH' | translate}}</ion-radio>
+          <ion-radio *ngIf="selectedValue != 'Spanish'" value="Spanish" (ionSelect)="selectValue('Spanish')">{{ 'SPANISH' | translate}}</ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label class="labelValue">{{ 'ITALIAN' | translate}}</ion-label>
+          <ion-radio *ngIf="selectedValue === 'italian'" value="italian" [checked]="selectLaunguage" (ionSelect)="selectValue('italian')">{{ 'ITALIAN' | translate}}</ion-radio>
+          <ion-radio *ngIf="selectedValue != 'italian'" value="italian" (ionSelect)="selectValue('italian')">{{ 'ITALIAN' | translate}}</ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label class="labelValue">{{ 'JAPANESE' | translate}}</ion-label>
+          <ion-radio *ngIf="selectedValue === 'Japanese'" value="Japanese" [checked]="selectLaunguage" (ionSelect)="selectValue('Japanese')">{{ 'JAPANESE' | translate}}</ion-radio>
+          <ion-radio *ngIf="selectedValue != 'Japanese'" value="Japanese" (ionSelect)="selectValue('Japanese')">{{ 'JAPANESE' | translate}}</ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label class="labelValue">{{ 'RUSSIAN' | translate}}</ion-label>
+          <ion-radio *ngIf="selectedValue === 'Russian'" value="Russian" [checked]="selectLaunguage" (ionSelect)="selectValue('Russian')">{{ 'RUSSIAN' | translate}}</ion-radio>
+          <ion-radio *ngIf="selectedValue != 'Russian'" value="Russian" (ionSelect)="selectValue('Russian')">{{ 'RUSSIAN' | translate}}</ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label class="labelValue">{{ 'PORTUGUESE' | translate}}</ion-label>
+          <ion-radio *ngIf="selectedValue === 'Portuguese'" value="Portuguese" [checked]="selectLaunguage" (ionSelect)="selectValue('Portuguese')">{{ 'PORTUGUESE' | translate}}</ion-radio>
+          <ion-radio *ngIf="selectedValue != 'Portuguese'" value="Portuguese" (ionSelect)="selectValue('Portuguese')">{{ 'PORTUGUESE' | translate}}</ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label class="labelValue">{{ 'VIETNAMESE' | translate}}</ion-label>
+          <ion-radio *ngIf="selectedValue === 'Vietnamese'" value="Vietnamese" [checked]="selectLaunguage" (ionSelect)="selectValue('Vietnamese')">{{ 'VIETNAMESE' | translate}}</ion-radio>
+          <ion-radio *ngIf="selectedValue != 'Vietnamese'" value="Vietnamese" (ionSelect)="selectValue('Vietnamese')">{{ 'VIETNAMESE' | translate}}</ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label class="labelValue">{{ 'SPANISH' | translate}}</ion-label>
+            <ion-radio *ngIf="selectedValue === 'Spanish'" value="Spanish" [checked]="selectLaunguage" (ionSelect)="selectValue('Spanish')">{{ 'SPANISH' | translate}}</ion-radio>
+            <ion-radio *ngIf="selectedValue != 'Spanish'" value="Spanish" (ionSelect)="selectValue('Spanish')">{{ 'SPANISH' | translate}}</ion-radio>
+          </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

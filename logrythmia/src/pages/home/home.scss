@@ -1,0 +1,69 @@
+page-home {
+    p {
+        font-family: Roboto;
+        font-size: 15px;
+        line-height: 21px;
+    }
+    ion-content.content.content-ios {
+        background: #fff !important;
+    }
+
+    ion-content.content.content-md {
+        background: #fff !important;
+    }
+
+    .itembox{
+      width: 6em;
+      .item-inner{
+        border:none !important;
+      }
+    }
+
+    .col-2 {
+      span {
+        line-height: 2.3em;
+        font-family: Roboto;
+        font-size: 1.2em;
+
+      }
+    }
+
+}
+
+.justify {
+  text-align: justify;
+}
+
+.close-btn, .closeicon {
+  font-family: Roboto;
+}
+
+ion-item .itembox.item.item-block.item-md.item-toggle {
+  background: #eaebed !important;      
+}
+
+page-home {
+    .about {
+        background: #eaebed !important;
+        display: -webkit-inline-box;
+        font-size: 0.9em;
+        line-height: 5rem;
+    }
+  .item-md {
+      background-color: none !important;
+  }
+  ion-item .itembox.item.item-block.item-md.item-toggle {
+    background: #eaebed !important;      
+  }
+}
+page-home .itembox .item-inner {
+    border: none !important;
+    background: #eaebed;
+}
+page-home .col-2 span {
+    line-height: 3.25em;
+    font-family: Roboto;
+    padding-right: 52px;
+    font-size: 1.2em; 
+    font-weight: 400;
+}

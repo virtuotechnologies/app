@@ -1,0 +1,133 @@
+page-analysis {
+    .card_bar {
+        width: 100%;
+        margin: 0 !important;
+        box-shadow: none !important;
+    }
+    ion-content.content.content-ios {
+        background: #fff !important;
+    }
+      
+    ion-content.content.content-md {
+        background: #fff !important;
+    }
+    .chart {
+        margin: 19px 0;
+    }
+
+    .scroll-content {
+        padding: 0 !important;
+    }
+    
+
+    .legend ul li{
+        list-style:none;   
+        display: inline-flex;
+        word-spacing: 0;
+        padding: 0px 7px;
+        color: #fff;
+        padding: 3px 10px;
+    }
+
+    .legend ul li{
+        color: #fff;
+        padding: 3px 10px;
+        margin: 0 5px;
+    }
+    
+    .legend ul> :first-child { background: #2d7e9c; }
+
+    .legend ul> :last-child { background: #007e00; }
+
+
+    .legend ul> :nth-child(2) { background:#fe0000; }
+
+
+    .legend ul> :nth-child(3) { background:#9833fd; }
+
+    .segment-button {
+        -webkit-box-flex: 1 !important;
+        -webkit-flex: 1 !important;
+        -ms-flex: 1 !important;
+        flex: 1 !important;
+        width: 0 !important;
+        height: 3.2rem !important;
+        border-width: 1px !important;
+        border-style: solid !important;
+        border-color: #ff3c6e !important;
+        font-size: 1.3rem !important;
+        line-height: 3rem !important;
+        color: #ff3c6e !important;
+        background-color: transparent !important;
+        font-family: Roboto;
+    }
+ 
+    .segment-activated{
+        background: #ff3c6e !important;
+        color: #fff !important;
+        font-family: Roboto;
+    }
+
+    .segment-md .segment-button:first-of-type {
+        border-top-left-radius: 12px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 12px;
+        margin-right: 0;
+    }
+
+    .segment-md .segment-button:last-of-type {
+        border-top-left-radius: 0;
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+        border-bottom-left-radius: 0;
+        margin-left: 0;
+        border-left-width: 0;
+    }
+    .legend {
+        font-family: Roboto-Regular;
+    }
+
+    .No {
+        text-align: center;
+        font-family: Roboto-Regular;
+    }
+
+    @media only screen
+    and (min-width : 320px)
+    and (max-width : 480px) {
+        .legend ul li{
+            color: #fff;
+            padding: 3px 10px;
+            margin: 1px;
+        }
+    }
+
+    .gridView {
+        padding: 16px;
+    }
+
+    /* Table Css */
+    table { 
+        width: 100%; 
+        /*border-collapse: collapse;*/
+        font-family: Roboto;
+    }
+    tr { 
+        background: #fff; 
+        border-bottom: 1px solid #ddd;
+    }
+    th { 
+        background: #ff3c62;
+        color: white;
+        
+    }
+    td, th { 
+        padding: 11px 10px;
+        text-align: left; 
+    }
+
+    td {
+        text-align: center;
+    }
+}

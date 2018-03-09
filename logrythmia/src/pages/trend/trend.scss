@@ -1,0 +1,51 @@
+page-trend {
+    ion-content.content.content-ios {
+        background: #d1d1d1 !important;
+    }
+
+    ion-content.content.content-md {
+        background: #d1d1d1 !important;
+    }
+
+    .table {
+        background: #fff;
+        border: 1px solid #eee;
+        width:100%;
+        th {
+            padding: .5em;
+            border-right: 1px solid #d1d1d1;
+            font-family: Roboto;
+            font-weight: 500;
+        }
+        td {
+            padding: 0.3em;
+            border-right: 1px solid #d1d1d1;
+            font-family: Roboto;
+            text-align: center;
+            font-weight: 400;
+        }
+        tr {
+            border-bottom: 1px solid #d1d1d1;
+            width: 100%;
+        }
+        .activetd {
+            background: #ebf5ff;
+        }
+            // tr:nth-child()) {
+            //     background: #f8fefd;
+            // }
+    }
+
+    .scroll-content {
+        padding: 10px !important;
+    }
+
+    .header {
+        background-color: #fff2de;
+    }
+
+    .No {
+        text-align:center;
+        paddings :10px;
+    }
+}

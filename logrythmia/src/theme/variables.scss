@@ -1,0 +1,137 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #ff3c62,
+  secondary:  #4a4a4a,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222
+);
+$toolbar-ios-background:#9b9b9b;
+$toolbar-background:#9b9b9b;
+$toolbar-md-title-text-color:#ffffff;
+$menu-wp-background	:#4a4a4a;
+$toolbar-active-color:#ff3c62;
+$font-size-base:1.4rem !default;
+$background-color:#D1D1D1;
+$list-background-color:#FFFFFF;
+$card-md-border-radius:0.8rem;
+
+.card-md{
+	box-shadow:0px 0px 17px 6px rgba(0, 0, 0, 0.12) !important;	
+}
+
+ion-menu {
+  ion-header{
+    ion-toolbar{
+      ion-title{
+      	text-align:left;
+      }
+    }
+  }
+}
+
+ion-header{
+	ion-navbar{
+		.toolbar-content, .toolbar-title-md{
+			text-align:center;
+
+		}
+	}
+}
+
+ion-menu{
+ ion-content{
+  background-color:#4a4a4a !important;
+  ion-list{
+  	button{
+  		background-color:#4a4a4a !important;
+  	}
+  }
+ }
+}
+$button-md-background-color-hover:#ff3366;
+
+$font-family-ios-base: "Roboto-Light", -apple-system, "Helvetica Neue", sans-serif;
+$font-family-md-base:  "Roboto-Light", "Helvetica Neue", sans-serif;
+$font-family-wp-base:  "Roboto-Light", "Segoe UI", "Noto Sans", sans-serif;
+
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";

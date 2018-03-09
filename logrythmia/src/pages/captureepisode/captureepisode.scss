@@ -1,0 +1,137 @@
+page-captureepisode {
+    .col {
+        padding: 2px !important;
+    }
+    ion-content.content.content-ios {
+       /* background: #e9e9e9 !important;*/
+    }
+    .toolbar-title.toolbar-title-ios {
+        font-size: 16px;
+    }
+    ion-content.content.content-md {
+        /*background: #e9e9e9 !important;*/
+    }
+    ion-textarea.notes.input.input-md {
+        height: 8rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    ion-textarea.notes.input.input-ios {
+        height: 8rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    .label_title {
+        font-family: Roboto;
+        font-size: 1.1em;
+        font-weight: 600;
+        padding: 0 !important;
+    }
+    .button-inner {
+        white-space: pre-line !important;
+        line-height: 1.3em !important;
+    }
+    .picker {
+        display: flex;
+        border: 1px solid #ff3c6e ;
+        height: 40px;
+        border-radius: 5px;
+        border-width: 1px;
+        ion-datetime {
+            width: 100%;
+            padding: 7px 0;
+        }
+        .icon {
+            line-height: 25px;
+        }
+    }
+
+    .space {
+        width: 5%;
+    }
+
+    .row {
+        display: flex;
+    }
+
+    .round-button {
+        padding: 0 2.5rem !important;
+        width: 100%;
+        font-family: Roboto;
+        font-size: 1.2em;
+        font-weight: normal !important; 
+        color: #000;
+        border-width: 1px;
+        text-transform: capitalize;
+    }
+
+    .button-outline-md {
+        padding: 1.75em !important;
+    }
+    .button-outline-ios {
+        padding: 1.75em !important;
+    }
+
+    .card-label {
+        padding: 0 .8em;
+    }
+
+    .card-content-label {
+        padding: 0px 5px 14px;
+    }
+
+    .input-item{
+        // border-bottom: 1px solid #000;
+    }
+
+    .input-item-has-foucs{
+        border-bottom: 1px solid #000;
+    }
+
+    .icons {
+        color: #9b9b9b;
+    }
+
+    .save-button {
+        padding: 0 16px;
+    }
+
+    .card-md {
+        box-shadow: 0px 0px 17px 1px rgba(0, 0, 0, 0.12) !important;
+    }
+    .card-ios {
+        box-shadow: 0px 0px 17px 1px rgba(0, 0, 0, 0.12) !important;
+    }
+ .card-content ion-input .text-input-md {
+    padding: 0px 0;
+    border-bottom: 1px solid #d1d1d1;
+ }
+
+
+
+ .card-content ion-input .text-input-ios {
+    padding: 0px 0;
+    border-bottom: 1px solid #d1d1d1;
+ }
+ ion-label.label_title.card-label.label.label-md{
+    margin-left: 15px;
+ }
+ ion-label.label_title.card-label.label.label-ios{
+    margin-left: 15px;
+ }
+ .save-button button {
+    border-radius: 5px;
+ }
+}
+page-captureepisode .label_title {
+    font-family: Roboto;
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 0 !important;
+}
+page-captureepisode .save-button button {
+    border-radius: 10px;
+    padding: 25px;
+    font-size: 1.35em;
+    font-weight: 700;
+}

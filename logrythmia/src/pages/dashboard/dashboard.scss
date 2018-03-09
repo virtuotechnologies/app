@@ -1,0 +1,176 @@
+page-dashboard {
+    .card_bar {
+        width: 100%;
+        margin: 0 !important;
+        box-shadow: none !important;
+    }
+    ion-content.content.content-ios {
+        background: #fff !important;
+    }
+      
+    ion-content.content.content-md {
+        background: #fff !important;
+    }
+    .chart {
+        /*margin: 19px 0;*/
+    }
+
+    .scroll-content {
+        padding: 0 !important;
+    }
+    
+    .legend ul li{
+        list-style:none;   
+        display: inline-flex;
+        word-spacing: 0;
+        padding: 0px 12px;
+        color: #fff;
+        // padding: 3px 10px;
+    }
+    canvas {
+        height: 400px !important;
+        margin: 0 auto !important;
+        font-weight: bolder;
+    }
+    @media screen and (min-width: 500px) and (max-width: 1024px) {
+        canvas {
+            height: 210px !important;
+            width: 100% !important;
+            margin: 0 auto !important;
+            font-weight: bolder;
+        }
+        .legend {
+            font-family: Roboto-Regular;
+            font-size: 1em;
+        }
+        page-dashboard .gridView {
+            padding: 0px !important; 
+        }
+        .col {
+            padding: 2px !important;
+        }
+        .label-md {
+            margin: 0 !important;
+        }
+    }
+    @media screen and (min-width: 500px) and (max-width: 1024px) {
+        sup {
+            font-size: 2.75em !important;
+            font-weight: bolder !important;
+        }
+    }
+
+    .legend ul li{
+        color: #fff;
+        // padding: 3px 10px;
+        // margin: 0 5px;
+        line-height: 2em;
+    }
+    .header {
+        text-align: center;
+    }
+    // .legend ul { background: #000;}
+    
+    .legend ul> :first-child { background: #8eaadb; }
+
+    // .legend ul> :last-child { background: #fb0808; }
+
+
+    .legend ul> :nth-child(2) { background:#92d050; }
+
+
+    .legend ul> :nth-child(3) { background:#ffc000; }
+
+    .legend ul> :nth-child(4) { background:#fb0808; }
+
+    // .legend ul> :nth-child(5) { background:#007e00; }
+
+
+
+    .segment-button {
+        -webkit-box-flex: 1 !important;
+        -webkit-flex: 1 !important;
+        -ms-flex: 1 !important;
+        flex: 1 !important;
+        width: 0 !important;
+        height: 3.2rem !important;
+        border-width: 1px !important;
+        border-style: solid !important;
+        border-color: #ff3c6e !important;
+        font-size: 1.3rem !important;
+        line-height: 3rem !important;
+        color: #ff3c6e !important;
+        background-color: transparent !important;
+        font-family: Roboto;
+    }
+ 
+    .segment-activated{
+        background: #ff3c6e !important;
+        color: #fff !important;
+        font-family: Roboto;
+    }
+
+    .segment-md .segment-button:first-of-type {
+        border-top-left-radius: 12px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 12px;
+        margin-right: 0;
+    }
+
+    .segment-md .segment-button:last-of-type {
+        border-top-left-radius: 0;
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+        border-bottom-left-radius: 0;
+        margin-left: 0;
+        border-left-width: 0;
+    }
+    .legend {
+        font-family: Roboto-Regular;
+        text-align: center;
+    }
+
+    .No {
+        text-align: center;
+        font-family: Roboto-Regular;
+    }
+
+    .gridView {
+        padding: 16px;
+    }
+
+    /* Table Css */
+    table { 
+        width: 100%; 
+        /*border-collapse: collapse;*/
+        font-family: Roboto;
+    }
+    tr { 
+        background: #fff; 
+        border-bottom: 1px solid #ddd;
+    }
+    th { 
+        background: #ff3c62;
+        color: white;
+    }
+    th { 
+        padding: 11px 10px;
+        text-align: center; 
+    }
+
+    td {
+        padding: 10px 5px;
+        text-align: center;
+    }
+
+    .end-btns {
+        text-transform: none;
+        font-size: 1.3em;
+    }
+
+    .No {
+        line-height: 4em;
+        font-family: Roboto-Regular;
+    }
+}

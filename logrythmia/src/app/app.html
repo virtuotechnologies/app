@@ -1,0 +1,58 @@
+<ion-menu [content]="content" class="menupage">
+  <ion-header class="toolbar-header">
+    <ion-toolbar class="toolbar-menu">
+      <ion-title class="left">
+        <h3 class="left">{{ 'MENU' | translate}}</h3>
+        <button menuClose class="close">
+          <h5 class="right">X</h5>
+        </button>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="homepage">
+    <ion-list>
+      <button class="menu" [ngClass]="{'active': page == 'Launguage'}" menuClose ion-item (click)="openPage('Launguage')">
+        <i class="fa fa-language icons" aria-hidden="true"></i>
+        {{ 'LANGUAGE' | translate}}
+      </button>
+      <button class="menu" [ngClass]="{'active': page == 'Capture'}" menuClose ion-item (click)="openPage('Capture')">
+        <i class="fa fa-pencil icons" aria-hidden="true"></i>
+        {{ 'CAPTURE_EPISODE' | translate}}
+      </button>
+      <button class="menu" [ngClass]="{'active': page == 'Trend'}" menuClose ion-item (click)="openPage('Trend')">
+        <i class="fa fa-th icons" aria-hidden="true"></i>
+        {{ 'TREND_REPORT' | translate}}
+      </button>
+      <button class="menu" [ngClass]="{'active': page == 'Dashboard'}" menuClose ion-item (click)="openPage('Dashboard')">
+        <i class="fa fa-bar-chart icons" aria-hidden="true"></i>
+        {{'DASHBOARD' | translate}}
+      </button>
+      <!-- <button class="menu" [ngClass]="{'active': page == 'Analysis'}" menuClose ion-item (click)="openPage('Analysis')">
+        <i class="fa fa-bar-chart icons" aria-hidden="true"></i>
+        {{'ANALYSIS' | translate}}
+      </button> -->
+    <!--   <button class="menu" [ngClass]="{'active': page == 'TrendDetails'}" menuClose ion-item (click)="openPage('TrendDetails')">
+        <i class="fa fa-bar-chart icons" aria-hidden="true"></i>
+        TrendDetails
+      </button> -->
+      <button class="menu" [ngClass]="{'active': page == 'Help'}" menuClose ion-item (click)="openPage('Help')">
+        <i class="fa fa-question-circle icons" aria-hidden="true"></i>
+        {{ 'HELP' | translate }} / {{ 'CONTACT_US' | translate}}
+      </button>
+      <button class="menu" [ngClass]="{'active': page == 'About'}" menuClose ion-item (click)="openPage('About')">
+        <i class="fa fa-info-circle icons" aria-hidden="true"></i>
+        {{ 'ABOUT_THE_APP' | translate}}
+      </button>
+      <button class="menu" [ngClass]="{'active': page == 'Terms'}" menuClose ion-item (click)="openPage('Terms')">
+        <!-- <i class="fa fa-wpforms icons" aria-hidden="true"></i> -->
+        <ion-icon class="icons" ios="ios-book" md="md-book"></ion-icon>
+        {{ 'TERMS_AND_CONDITIONS' | translate}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

@@ -1,0 +1,134 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url('../assets/fonts/Roboto/Roboto-Light.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../assets/fonts/Roboto/Roboto-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.toolbar-title-ios {
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 21px;
+}
+
+ion-title .left h3 {
+    margin-left: 0.625em;
+}
+
+.toolbar-title-md {
+    font-family: Roboto;
+    font-weight: normal;
+}
+
+.close-btn {
+    box-shadow: none !important;
+    text-transform: capitalize;
+    font-family: Roboto-Regular;
+    font-size: 1em;
+}
+
+.closeicon {
+    padding: 10px;
+    font-size: 1em;
+    font-family: Roboto-Regular;
+}
+
+button.menu.item.item-block.item-ios {
+    .item-inner {
+        background-image: none !important;
+        border-bottom: none !important;
+    }
+}
+
+button.menu.item.item-block.item-md {
+    .item-inner {
+        background-image: none !important;
+        border-bottom: none !important;
+    }
+}
+
+.menu {
+    /*line-height: 1.8em;*/
+    color: #eeeeeef2;
+
+    .icons {
+        padding: 1px 25px;
+        font-weight: 100;
+    }
+}
+
+.active {
+    background: #ff3c6e !important;
+    color: #fff !important;
+}
+
+.list-ios > .item-block:last-child, 
+.list-ios > .item-wrapper:last-child .item-block {
+    border-bottom: none !important;
+}
+
+ion-title.left.title.title-ios{
+    text-align: left !important;
+    padding: 0 19px 1px !important
+}
+
+h3.left {
+    float: left;
+    display: inline-block;
+    font-weight: 300;
+    font-size: 1.25em;
+}
+
+i .fa {
+    color: #9c9c9c;
+}
+.close {
+    float: right;
+    background: none;
+    color: #fff;
+
+    h5 {
+        color: #b8b8b8 !important;
+    }
+}
+
+ion-content.homepage.content.content-md,
+ion-content.homepage.content.content-ios {
+    background: #4a4a4a!important;
+}
+
+.card-content ion-input .text-input-md {
+    border-bottom: 1px solid #d1d1d1;
+}
+ion-toolbar {
+    .toolbar-background.toolbar-background-md,
+    .toolbar-background.toolbar-background-ios {
+        background: #4a4a4a;
+    }
+}
+
+button.menu.item.item-block.item-md {
+    color: #fff !important;
+}

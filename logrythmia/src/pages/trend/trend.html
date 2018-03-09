@@ -1,0 +1,81 @@
+<!--
+  Generated template for the TrendPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'TREND_REPORT' | translate}}</ion-title>
+    <ion-buttons end>
+        <button ion-button class="end-btns" style="color:#9b9b9b">
+          Share
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <table class="table" [hidden]="!length">
+    <thead>
+      <tr class="header">
+        <th>
+          {{ 'EPISODES' | translate}}
+        </th>
+        <th>
+          {{'DATE_TIME' | translate}}
+        </th>
+        <th>
+          {{'DURATION' | translate}}
+        </th>
+        <th>
+          {{'SYMPTOMS' | translate}}
+        </th>
+        <th>
+          {{'PULSE' | translate }}
+        </th>
+        <th>
+          {{'TRIGGER' | translate}}
+        </th>
+        <th>
+          {{'TERMINATION' | translate}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let episode of episodes;let i=index;let odd=odd; let even=even;let i=index;" [class.activetd]="odd" (click)="detailsView(i)">
+        <td>
+          {{i+1}}
+        </td>
+        <td>
+          {{episode.dateformat}}
+        </td>
+        <td>
+          <span *ngIf="episode.minutes === 'More than 5 min'">>&nbsp;5M</span>
+          <span *ngIf="episode.minutes === 'More than 30 min'">>&nbsp;30M</span>
+          <span *ngIf="episode.minutes === 'Less than 30 min'">
+            <&nbsp;30M</span>
+              <span *ngIf="episode.minutes === 'Less than 5 min'">
+                <&nbsp;5M</span>
+        </td>
+        <td>
+          {{episode.symptoms}}
+        </td>
+        <td>
+          {{episode.pulse}}
+        </td>
+        <td>
+          {{episode.doSelectedValue}}
+        </td>
+        <td>
+          {{episode.stopSelectedValue}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 [hidden]="length" class="No">{{'NO_DATA' | translate}}</h5>
+</ion-content>

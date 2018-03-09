@@ -1,0 +1,49 @@
+<!--
+  Generated template for the ContactPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ 'HELP' | translate }} & {{ 'CONTACT_US' | translate}}</ion-title>
+    <ion-buttons end>
+        <button ion-button class="end-btns" style="color:#9b9b9b">
+          Share
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <form #myForm="ngForm">
+      <ion-card-content class="card-content">
+        <p>
+          <ion-input name="username" type="text" placeholder="{{ 'YOUR_NAME' | translate}}" [(ngModel)]="userName"></ion-input>
+        </p>
+
+        <p>
+          <ion-input name="email" type="email" placeholder="{{'YOUR_EMAIL_ID' | translate}}"
+           [(ngModel)]="userEmail" #emailValue="ngModel" email></ion-input>
+        </p>
+        <p class="err" *ngIf="emailValue.errors?.email  && emailValue.dirty">
+          Enter Valid Email
+       </p>
+        <br>
+        <br>
+        <p>
+          <ion-textarea name="message" class="notes" autosize rows="5" [(ngModel)]="userMessage" placeholder="{{'LEAVE_YOUR_NOTE_HERE' | translate}}"
+            autocomplete="on" autocorrect="on">
+          </ion-textarea>
+        </p>
+        <br>
+        <button class="send" ion-button secondary (click)="sendEmail()" [disabled]="myForm.invalid">{{'SEND' | translate}}</button>
+      </ion-card-content>
+    </form>  
+  </ion-card>
+</ion-content>

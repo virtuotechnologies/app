@@ -1,0 +1,215 @@
+<!--
+  Generated template for the DashboardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>{{ 'DASHBOARD' | translate }}</ion-title>
+		<ion-buttons end>
+			<button ion-button class="end-btns" (click)="createPdf()">
+				Share
+			</button>
+		</ion-buttons>
+	</ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<div [hidden]="!length">
+		<ion-grid class="gridView">
+			<ion-row>
+				<ion-col col-7>
+					<ion-segment [(ngModel)]="selectSegment">
+						<ion-segment-button class="segment-button" value="3M" (click)="segmentChanged('3M')">
+							3M
+						</ion-segment-button>
+						<ion-segment-button class="segment-button" value="6M" (click)="segmentChanged('6M')">
+							6M
+						</ion-segment-button>
+						<ion-segment-button class="segment-button" value="9M" (click)="segmentChanged('9M')">
+							9M
+						</ion-segment-button>
+						<ion-segment-button class="segment-button" value="12M" (click)="segmentChanged('12M')">
+							12M
+						</ion-segment-button>
+					</ion-segment>
+				</ion-col>
+				<ion-col col-5>
+					<ion-segment [(ngModel)]="selectTypeValue">
+						<ion-segment-button class="segment-button" value="Chart" (click)="selectType('Chart')">
+							Chart
+						</ion-segment-button>
+						<ion-segment-button class="segment-button" value="Trend" (click)="selectType('Trend')">
+							Trend
+						</ion-segment-button>
+					</ion-segment>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+
+		<div>
+			<ion-list *ngIf="selectTypeValue === 'Chart' && selectSegment === '3M'">
+				<ion-item>
+					<div class="chart">
+						<canvas #barCanvas id="bar" width="500" height="500" border='0'>
+						</canvas>
+						<!-- <div>
+
+						</div>
+						<span>Total</span> -->
+						<div id="legend" class="legend" (click)="getEvent($event)">
+						</div>
+					</div>
+				</ion-item>
+			</ion-list>
+
+			<ion-list *ngIf="selectTypeValue === 'Chart' && selectSegment === '6M'">
+				<ion-item>
+					<div class="chart">
+						<canvas #barCanvas id="bar" width="500" height="500" border='0'>
+						</canvas>
+						<div id="legend" class="legend" (click)="getEvent($event)">
+						</div>
+					</div>
+				</ion-item>
+			</ion-list>
+
+			<ion-list *ngIf="selectTypeValue === 'Chart' && selectSegment === '9M'">
+				<ion-item>
+					<div class="chart">
+						<canvas #barCanvas id="bar" width="500" height="500" border='0'>
+						</canvas>
+						<div id="legend" class="legend" (click)="getEvent($event)">
+						</div>
+					</div>
+				</ion-item>
+			</ion-list>
+
+			<ion-list *ngIf="selectTypeValue === 'Chart' && selectSegment === '12M'">
+				<ion-item>
+					<div class="chart">
+						<canvas #barCanvas id="bar" width="500" height="500" border='0'>
+						</canvas>
+						<div id="legend" class="legend" (click)="getEvent($event)">
+						</div>
+					</div>
+				</ion-item>
+			</ion-list>
+		</div>
+
+
+		<!-- Trend Report -->
+		<div *ngIf="selectTypeValue === 'Trend'">
+			<table class="table">
+				<thead>
+					<tr class="header">
+						<th>Month</th>
+						<th>Total</th>
+						<th>
+							< 5M </th>
+								<th>> 5M</th>
+								<th>
+									< 30M </th>
+										<th>> 30M</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let value of totalTrendReport">
+						<td>{{value.date}}</td>
+						<td>{{value.total}}</td>
+						<td>{{value.lessfive}}</td>
+						<td>{{value.morefive}}</td>
+						<td>{{value.lessthirty}}</td>
+						<td>{{value.morethirty}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div *ngIf="!length">
+		<h5 class="No">No reports</h5>
+	</div>
+	<!-- Html Content -->
+	<div [hidden]='true'>
+	<div id="reports"  class="Report-section" style=" padding: 15px;margin-top: 56px;border-left: 1px solid #000;border-right: 1px solid #000;border-top: 1px solid #000;">
+		<h2 class="text-center" style="text-align: center;">Logrythmia Entry</h2>
+		<h4 class="text-center" style="text-align: center;">Monthly Report</h4>
+		<div class="table-view">
+			<table class="table" style="width: 100%; border-collapse: collapse;font-family: Roboto;overflow-x: auto;
+								border: 1px solid #000;width: 100%;">
+				<thead>
+					<tr style="background: #fff; border-bottom: 1px solid #000;border-right: 1px solid #000;">
+						<th style="background: #000;color: white;text-align: center;">Month</th>
+						<th style="background: #000;color: white;text-align: center;">Total</th>
+						<th style="background: #000;color: white;text-align: center;">< 3M</th>
+						<th style="background: #000;color: white;text-align: center;">> 3M</th>
+						<th style="background: #000;color: white;text-align: center;">< 30M</th>
+						<th style="background: #000;color: white;text-align: center;">> 30M</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td style="padding: 6px 10px;border-right: 1px solid #000;">Month 1</td>
+						<td style="padding: 6px 10px;border-right: 1px solid #000;"></td>
+						<td style="padding: 6px 10px;border-right: 1px solid #000;"></td>
+						<td style="padding: 6px 10px;border-right: 1px solid #000;"></td>
+						<td style="padding: 6px 10px;border-right: 1px solid #000;"></td>
+						<td style="padding: 6px 10px;border-right: 1px solid #000;"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="row" style="width: 100%;display: flex;">
+			<div class="col-sm-6" style="width: 50%;">
+				<p>Patient Name : </p>
+			</div>
+			<div class="col-sm-6 text-right" style="width: 50%;text-align: right;">
+				<p>Report Generated Date : 12 Feb, 2018</p>
+			</div>
+		</div>
+		<div>
+			<p>You can use this space to describe any additional features you feel is important</p>
+			<textarea type="text" row="3" name="text-describe" style=" width: 100%;height: 100px;"></textarea>
+			<p>The above information is true and correct to the best of my brief.</p>
+		</div>
+
+		<div class="row" style="width: 100%;display: flex;">
+			<div class="col-sm-2" style="padding: 5px;width: 34%;">
+				<p>Patient Signature:</p>
+			</div>
+			<div class="col-sm-4" style="width: 66%;padding: 5px;">
+				<input type="text" name="Patient-sign">
+			</div>
+			<div class="col-sm-2" style="padding: 5px;width: 34%;">
+				<p>Date :</p>
+			</div>
+			<div class="col-sm-4" style="width: 66%;padding: 5px;">
+				<input type="text" name="Patient-date">
+			</div>				
+		</div>
+
+		<div class="row" style="width: 100%;display: flex;">
+			<div class="col-sm-2" style="padding: 5px;width: 34%;">
+				<p>Physician Signature:</p>
+			</div>
+			<div class="col-sm-4" style="width: 66%;padding: 5px;">
+				<input type="text" name="Physician-sign">
+			</div>
+			<div class="col-sm-2" style="padding: 5px;width: 34%;">
+				<p>Date :</p>
+			</div>
+			<div class="col-sm-4" style="width: 66%;padding: 5px;">
+				<input type="text" name="Physician-date" style="width: 100%;margin-top: 15px;border: none;border-bottom: 1px solid #ddd;">
+			</div>				
+		</div>
+	</div>
+	<div class="report-foot" style="border: 1px solid #000;">
+		<p style="margin-left: 15px;">Report Generated using LogRythmia App</p>
+	</div>
+	</div>

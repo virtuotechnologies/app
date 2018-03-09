@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'ABOUT_THE_APP' | translate}}</ion-title>
+    <ion-buttons end>
+        <button ion-button class="end-btns" style="color:#9b9b9b">
+          Share
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>LogRythmia</h3>
+  <h5>About :</h5>
+  <p class="justify">LogRythmia application was developed by LogRythmia, LLC to help track your symptoms that may be related to an arrhythmia you suffer from, by tracking their characteristics, severity, duration, and to document how they started and discontinued.  The application records the symptoms over time.  The application also has an option of entering your medications you may use during your symptoms.  LogRythmia was also designed to generate symptoms activity records that you can share with your healthcare provider.  Information provided this way can be used by your healthcare providers to help them understand what you may have felt, and to choose the best heart monitoring system to diagnose the rhythm disease you suffer from.</p>
+
+  <p class="justify">In case you are diagnosed with a rhythm condition, information collected can be used to assess whether the arrhythmia is well controlled under the current medication. It may also help your healthcare provider to inform your insurance carrier if you need another treatment modalities that requires documentation of failure of other options.  None of the information is available to any external parties.  Information is only stored within your application on your mobile device.</p>
+
+  <p class="justify">This app is for guidance purposes only.  Both the report and content are for personal use and not intended for self diagnosis.  The information contained herein is not a substitute for professional assessment and treatment. LogRythmia, LLC makes no representation that any treatments are appropriate for your symptoms.  You should consult your doctor about your diagnosis and treatment options.  For emergency situations relating to your condition or medication(s) taken, please call your doctor or call 9-1-1 immediately.</p>
+  <button class='close-btn' ion-button block menuToggle>
+    <span class='closeicon'>x</span> Close</button>
+
+  <ion-row class="row about">
+    <div class="col-2">
+      <ion-item class="itembox" >
+        <ion-toggle [checked]="checked" (ionChange)="toggle($event)"></ion-toggle>
+      </ion-item>
+    </div>
+    <div class="col-2">
+      <span>Do not show this next time</span>
+    </div>
+  </ion-row>
+
+</ion-content>

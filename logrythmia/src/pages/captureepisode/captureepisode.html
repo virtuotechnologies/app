@@ -1,0 +1,235 @@
+<!--
+  Generated template for the CaptureepisodePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'CAPTURE_EPISODE' | translate}}</ion-title>
+    <ion-buttons end>
+			<button ion-button class="end-btns" style="color:#9b9b9b">
+				Share
+			</button>
+		</ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-label class='label_title'>{{'WHEN_DID_THE_SYMPTOM_OCCURS?' | translate}}</ion-label>
+      <ion-list>
+        <ion-row>
+          <ion-col class="picker">
+            <ion-datetime displayFormat="MMM DD, YYYY" [max]="maxDateValue" name="date" [(ngModel)]="myDate"></ion-datetime>
+            <i class="fa fa-calendar-o icon icons" aria-hidden="true"></i>
+          </ion-col>
+          <div class="space"></div>
+          <ion-col class="picker">
+            <ion-datetime displayFormat="HH:mm:ss" name="time" max="2020-10-31" placeholder="00:00:00" [(ngModel)]="timeValue"></ion-datetime>
+            <i class="fa fa-clock-o icon icons" aria-hidden="true"></i>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-label class='label_title card-label'>{{ 'DID_YOU_HAVE_ANY_OF_THESE_SYMPTOMS?' | translate}}</ion-label>
+    <ion-card-content class="card-content-label">
+      <ion-list radio-group>
+        <div *ngIf="selectedSymptomsValueFinal.length === 0">
+          <ion-row>
+            <ion-col col-6>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': selectedSymptomsValue == 'Lightheadedness'}"
+                (click)="selectSymptoms('Lightheadedness')">{{'LIGHTHEADEDNESS' | translate}}</button>
+            </ion-col>
+            <ion-col col-6>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': selectedSymptomsValue == 'Fainted'}" (click)="selectSymptoms('Fainted')">{{'FAINTNESS' | translate}}</button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': selectedSymptomsValue == 'Passing out/syncope'}"
+                (click)="selectSymptoms('Passing out/syncope')">{{'PASSING_OUT/SYNCOPE' | translate}}</button>
+            </ion-col>
+            <ion-col col-6>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': selectedSymptomsValue == 'Fatigue'}" (click)="selectSymptoms('Fatigue')">{{'FATIGUE' | translate}}</button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': selectedSymptomsValue == 'Short of breath'}"
+                (click)="selectSymptoms('Short of breath')">{{ 'SHORT_OF_BREATH' | translate}}</button>
+            </ion-col>
+            <ion-col col-6>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': selectedSymptomsValue == 'Chest tightness'}"
+                (click)="selectSymptoms('Chest tightness')">{{'CHEST_TIGHTNESS' | translate}}</button>
+            </ion-col>
+          </ion-row>
+        </div>
+        <div *ngIf="selectedSymptomsValueFinal.length !== 0">
+          <ion-row>
+            <ion-col *ngFor="let symptoms of symptoms" col-6>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': symptoms.selected === 'true'}" (click)="selectSymptoms(symptoms.value)">{{symptoms.tranlsate | translate}}</button>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-label class='label_title card-label'>{{'HOW_LONG_DID_THAT_LAST?' | translate}}</ion-label>
+    <ion-card-content class="card-content-label">
+      <!-- <div *ngIf="selectedTimeValueFinal.length === 0"> -->
+        <ion-list radio-group>
+          <ion-row>
+            <ion-col col-6>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': selectedTimeValue == 'Less than 5 min'}" (click)="selectSeconds('Less than 5 min')">{{'LESS_THAN_5_MIN' | translate}}</button>
+            </ion-col>
+            <ion-col col-6>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': selectedTimeValue == 'More than 5 min'}" (click)="selectSeconds('More than 5 min')">{{'MORE_THAN_5_MIN' | translate}}</button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': selectedTimeValue == 'Less than 30 min'}" (click)="selectSeconds('Less than 30 min')">{{'LESS_THAN_30_MIN' | translate}}</button>
+            </ion-col>
+            <ion-col col-6>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': selectedTimeValue == 'More than 30 min'}" (click)="selectSeconds('More than 30 min')">{{'MORE_THAN_30_MIN' | translate}}</button>
+            </ion-col>
+          </ion-row>
+        </ion-list>
+      <!-- </div> -->
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-label class='label_title card-label'>{{'HOW_WAS_YOUR_PULSE?' | translate}}</ion-label>
+    <ion-card-content class="card-content-label">
+      <div *ngIf="selectedPulseValueFinal.length === 0">
+        <ion-list radio-group>
+          <ion-row>
+            <ion-col col-6>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': selectedPulseValue == 'Fast'}" (click)="selectPulse('Fast')">{{'FAST' | translate}}</button>
+            </ion-col>
+            <ion-col col-6>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': selectedPulseValue == 'Slow'}" (click)="selectPulse('Slow')">{{'SLOW' | translate}}</button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': selectedPulseValue == 'Irregular'}" (click)="selectPulse('Irregular')">{{'IRREGULAR' | translate}}</button>
+            </ion-col>
+            <ion-col col-6>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': selectedPulseValue == 'I felt skip beats'}" (click)="selectPulse('I felt skip beats')">{{'I_FELT_SKIP_BEATS' | translate}}</button>
+            </ion-col>
+          </ion-row>
+        </ion-list>
+      </div>
+      <div *ngIf="selectedPulseValueFinal.length !== 0">
+        <ion-row>
+          <ion-col *ngFor="let pulse of pulse" col-6>
+            <button ion-button round outline class="round-button" [ngClass]="{'active': pulse.selected === 'true'}" (click)="selectPulse(pulse.value)">{{pulse.tranlsate | translate}}</button>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-label class='label_title card-label'>{{'WHEN_IT_STARTED,I_WAS' | translate}}</ion-label>
+    <ion-card-content class="card-content-label">
+      <!-- <div *ngIf="doSelectedValueFinal.length === 0"> -->
+        <ion-list radio-group>
+          <ion-row>
+            <ion-col col-6>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': doSelectedValue == 'At rest'}" (click)="doSelected('At rest')">{{'AT_REST' | translate}}</button>
+            </ion-col>
+            <ion-col col-6>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': doSelectedValue == 'Doing exercise'}" (click)="doSelected('Doing exercise')">{{'DOING_EXERCISE' | translate}}</button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': doSelectedValue == 'Drinking alcohol'}" (click)="doSelected('Drinking alcohol')">{{'DRINKING_ALCOHOL' | translate}}</button>
+            </ion-col>
+            <ion-col col-6>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': doSelectedValue == 'Recover from Exercise'}" (click)="doSelected('Recover from Exercise')">{{'RECOVERING_FROM_EXERSISE' | translate}}</button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': doSelectedValue == 'having sex'}" (click)="doSelected('having sex')">{{'HAVING_SEX' | translate}}</button>
+            </ion-col>
+            <ion-col col-6>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': doSelectedValue == 'Under stress'}" (click)="doSelected('Under stress')">{{'UNDER_STRESS' | translate}}</button>
+            </ion-col>
+          </ion-row>
+        </ion-list>
+      <!-- </div> -->
+     
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-label class='label_title card-label'>{{'HOW_DID_IT_STOP?' | translate}}</ion-label>
+    <ion-card-content class="card-content-label">
+      <!-- <div *ngIf="stopSelectedValueFinal.length === 0"> -->
+        <ion-list radio-group>
+          <ion-row>
+            <ion-col col-6>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': stopSelectedValue == 'By itself'}" (click)="selectedStop('By itself')">{{'BY_ITSELF' | translate}}</button>
+            </ion-col>
+            <ion-col col-6>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': stopSelectedValue == 'At rest'}" (click)="selectedStop('At rest')">{{'AT_REST' | translate}}</button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': stopSelectedValue == 'After a cold drink'}" (click)="selectedStop('After a cold drink')">{{'AFTER_A_COLD_DRINK' | translate}}</button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': stopSelectedValue == 'After specific maneouvers'}"
+                (click)="selectedStop('After specific maneouvers')">{{'AFTER_SPECIFIC_MANEOUVERS' | translate}}</button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+          </ion-row>
+          <ion-label class='label_title'>{{'WHICH_ONE?' | translate}}</ion-label>
+          <ion-row>
+            <ion-col col-12>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': stopSelectedValue == 'After an intervention by medical team'}"
+                (click)="selectedStop('After an intervention by medical team')">{{'AFTER_AN_INTERVENTION_BY_MEDICAL_TEAM' | translate}}</button>
+            </ion-col>
+            <ion-col col-12>
+              <button ion-button round outline class="round-button" [ngClass]="{'active': stopSelectedValue == 'After taking medication'}"
+                (click)="selectedStop('After taking medication')">{{'AFTER_TAKING_MEDICATION' | translate}}</button>
+            </ion-col>
+          </ion-row>
+        </ion-list>
+      <!-- </div> -->
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-label class='label_title'>{{'COMMENTS' | translate}}</ion-label>
+      <p class="input-item">
+        <ion-textarea class="notes" rows="2" type="text" [(ngModel)]="NotesValue"></ion-textarea>
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="save-button">
+    <button ion-button block [disabled]="!(myDate && timeValue && selectedSymptomsValueFinal.length != 0 && selectedTimeValue && selectedPulseValueFinal.length != 0 && doSelectedValue && stopSelectedValue)" (click)="save()">{{'SAVE' | translate}}</button>
+  </div>
+</ion-content>
